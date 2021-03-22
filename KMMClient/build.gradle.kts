@@ -55,3 +55,10 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.buildDir)
 }
+
+tasks.register<Exec>("startServer") {
+    executable("sh")
+    args( "-c", "cd ../KMMServer && " +
+            "./gradlew build && " +
+            "./gradlew run &")
+}

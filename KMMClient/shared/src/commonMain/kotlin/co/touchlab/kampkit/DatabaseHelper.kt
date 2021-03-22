@@ -17,7 +17,6 @@ class DatabaseHelper(
     private val backgroundDispatcher: CoroutineDispatcher
 ) {
     private val dbRef: KaMPKitDb = KaMPKitDb(sqlDriver)
-
     fun selectAllItems(): Flow<List<Breed>> =
         dbRef.tableQueries
             .selectAll()

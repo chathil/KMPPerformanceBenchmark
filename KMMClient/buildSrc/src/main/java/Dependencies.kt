@@ -53,7 +53,6 @@ object Deps {
     val stately = "co.touchlab:stately-common:${Versions.stately}"
     val kotlinxDateTime = "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.kotlinxDateTime}"
     val turbine = "app.cash.turbine:turbine:${Versions.turbine}"
-
     object AndroidX {
         val appcompat = "androidx.appcompat:appcompat:${Versions.AndroidX.appcompat}"
         val core_ktx = "androidx.core:core-ktx:${Versions.AndroidX.core}"
@@ -105,5 +104,6 @@ object Deps {
         val androidCore = "io.ktor:ktor-client-okhttp:${Versions.ktor}"
         val ios = "io.ktor:ktor-client-ios:${Versions.ktor}"
         val commonSerialization = "io.ktor:ktor-client-serialization:${Versions.ktor}"
+        val serialization = "io.ktor:ktor-serialization:${Versions.ktor}"
     }
 }
