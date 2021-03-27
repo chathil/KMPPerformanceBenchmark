@@ -1,0 +1,50 @@
+import co.touchlab.kampkit.data.local.entity.ParentPlatformEntity;
+import co.touchlab.kampkit.data.local.entity.GamePlatformEntity;
+import co.touchlab.kampkit.data.local.entity.GenreEntity;
+import co.touchlab.kampkit.data.local.entity.RatingEntity;
+import co.touchlab.kampkit.data.local.entity.ShortScreenshotEntity;
+import co.touchlab.kampkit.data.local.entity.GameStoreEntity;
+import co.touchlab.kampkit.data.local.entity.TagEntity;
+import java.lang.Boolean;
+import java.util.Date;
+import kotlin.collections.List;
+import kotlinx.serialization.descriptors.PrimitiveKind.INT;
+
+CREATE TABLE GameEntity (
+    apiId INTEGER AS Int PRIMARY KEY,
+    name TEXT NOT NULL,
+    slug TEXT,
+    released TEXT,
+    tba INTEGER AS Boolean NOT NULL DEFAULT 0,
+    backgroundImage TEXT,
+    rating REAL AS Float NOT NULL DEFAULT 0.0,
+    ratingTop REAL AS Float NOT NULL DEFAULT 5.0,
+    ratings TEXT AS List<RatingEntity>,
+    ratingsCount INTEGER AS Int NOT NULL DEFAULT 0,
+    reviewTextCount INTEGER AS Int NOT NULL DEFAULT 0,
+    added INTEGER AS Int NOT NULL DEFAULT 0,
+    metacritic INTEGER AS Int NOT NULL DEFAULT 0,
+    playtime INTEGER AS Int NOT NULL DEFAULT 0,
+    suggestionCount INTEGER AS Int NOT NULL DEFAULT 0,
+    reviewsCount INTEGER AS Int NOT NULL DEFAULT 0,
+    saturatedColor TEXT,
+    dominantColor TEXT,
+    platforms TEXT AS List<GamePlatformEntity>,
+    parentPlatforms TEXT AS List<ParentPlatformEntity>,
+    genres TEXT AS List<GenreEntity>,
+    stores TEXT AS List<GameStoreEntity>,
+    clip TEXT,
+    tags TEXT AS List<TagEntity>,
+    shortScreenshots TEXT AS List<ShortScreenshotEntity>
+);
+
+loadGames:
+SELECT *
+FROM GameEntity;
+
+insertGame:
+INSERT OR REPLACE INTO GameEntity
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+clearGames:
+DELETE FROM GameEntity;

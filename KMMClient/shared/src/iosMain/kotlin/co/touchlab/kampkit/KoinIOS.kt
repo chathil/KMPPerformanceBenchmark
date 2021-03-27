@@ -1,6 +1,6 @@
 package co.touchlab.kampkit
 
-import co.touchlab.kampkit.db.KaMPKitDb
+import co.touchlab.kampkit.data.local.GamesLocalDb
 import co.touchlab.kermit.Kermit
 import co.touchlab.kermit.NSLogLogger
 import com.russhwolf.settings.AppleSettings
@@ -29,7 +29,7 @@ fun initKoinIos(
 )
 
 actual val platformModule = module {
-    single<SqlDriver> { NativeSqliteDriver(KaMPKitDb.Schema, "KampkitDb") }
+    single<SqlDriver> { NativeSqliteDriver(GamesLocalDb.Schema, "KampkitDb") }
 
     val baseKermit = Kermit(NSLogLogger()).withTag("KampKit")
     factory { (tag: String?) -> if (tag != null) baseKermit.withTag(tag) else baseKermit }

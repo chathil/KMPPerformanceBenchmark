@@ -1,7 +1,11 @@
 package co.touchlab.kampkit
 
-import co.touchlab.kampkit.ktor.DogApiImpl
-import co.touchlab.kampkit.ktor.KtorApi
+import co.touchlab.kampkit.data.GetGamesRepository
+import co.touchlab.kampkit.data.local.GetGamesLocalDataSource
+import co.touchlab.kampkit.data.remote.GetGamesRemoteDataSource
+import co.touchlab.kampkit.domain.usecase.GamesInteractor
+import co.touchlab.kampkit.domain.usecase.GamesUseCase
+import co.touchlab.kampkit.presentation.GamesPresenter
 import co.touchlab.kermit.Kermit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.datetime.Clock
@@ -35,17 +39,19 @@ fun initKoin(appModule: Module): KoinApplication {
 
 private val coreModule = module {
     single {
-        DatabaseHelper(
+        GetGamesLocalDataSource(
             get(),
-            getWith("DatabaseHelper"),
+            getWith("GetGamesLocalDataSource"),
             Dispatchers.Default
         )
     }
-    single<KtorApi> {
-        DogApiImpl(
-            getWith("DogApiImpl")
-        )
+    single {
+        GetGamesRemoteDataSource(log = getWith("GetGamesRemoteDataSource"))
     }
+    single { GetGamesRepository(get(), get()) }
+    single { GamesInteractor(get()) }
+    single { GamesPresenter(get()) }
+    single<GamesUseCase> {GamesInteractor(get())}
     single<Clock> {
         Clock.System
     }

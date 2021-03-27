@@ -10,95 +10,97 @@ import UIKit
 import shared
 
 class BreedsViewController: UIViewController {
-
-    @IBOutlet weak var breedTableView: UITableView!
-    var data: [Breed] = []
+  
+  let log = koin.get(objCClass: Kermit.self, parameter: "ViewController") as! Kermit
+  let presenter = koin.get(objCClass: GamesPresenter.self, parameter: "") as! GamesPresenter
+  
+  var parsingTimeStart: Int64 = 0
+  var parsingTime = 0
+  
+  var responseToEntityMappingTimeStart: Int64 = 0
+  var responseToEntityMappingTime = 0
+  
+  var entityWritingTimeStart: Int64 = 0
+  var entityWritingTime = 0
+  
+  var entityReadingTimeStart: Int64 = 0
+  var entityReadingTime = 0
+  
+  var entityToDomainModelMappingTimeStart: Int64 = 0
+  var entityToDomainModelMappingTime = 0
+  
+  @objc
+  func getBreedsForced() {
     
-    let log = koin.get(objCClass: Kermit.self, parameter: "ViewController") as! Kermit
-    private let refreshControl = UIRefreshControl()
-
-    lazy var adapter: NativeViewModel = NativeViewModel(
-        onLoading: { /* Loading spinner is shown automatically on iOS */
-            [weak self] in
-            guard let self = self else { return }
-            if (!(self.refreshControl.isRefreshing)) {
-                self.refreshControl.beginRefreshing()
-            }
-        },
-        onSuccess: {
-            [weak self] summary in self?.viewUpdateSuccess(for: summary)
-            self?.refreshControl.endRefreshing()
-        },
-        onError: { [weak self] error in self?.errorUpdate(for: error)
-            self?.refreshControl.endRefreshing()
-        },
-        onEmpty: { /* Show "No doggos found!" message */
-            [weak self] in self?.refreshControl.endRefreshing()
-        }
-    )
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    // MARK: View Lifecycle
-
-    @objc
-    func getBreedsForced() {
-        adapter.refreshBreeds(forced: true)
+    
+    let timeMeasurementUtils = TimeMeasurementUtils(
+      parsingTimeStart: { self.parsingTimeStart = $0.int64Value },
+      parsingTimeEnd: { self.parsingTime = Int($0.int64Value - self.parsingTimeStart) },
+      responseToEntityMappingTimeStart: { self.responseToEntityMappingTimeStart = $0.int64Value },
+      responseToEntityMappingTimeEnd: { self.responseToEntityMappingTime = Int($0.int64Value - self.responseToEntityMappingTimeStart) },
+      entityWritingTimeStart: { self.entityWritingTimeStart = $0.int64Value },
+      entityWritingTimeEnd: { self.entityWritingTime = Int($0.int64Value - self.entityWritingTimeStart) },
+      entityReadingTimeStart: { self.entityReadingTimeStart = $0.int64Value },
+      entityReadingTimeEnd: { self.entityReadingTime = Int($0.int64Value - self.entityReadingTimeStart) },
+      entityToDomainModelMappingTimeStart: { self.entityToDomainModelMappingTimeStart = $0.int64Value },
+      entityToDomainModelMappingTimeEnd: {
+        self.entityToDomainModelMappingTime = Int($0.int64Value - self.entityToDomainModelMappingTimeStart)
+        self.getTimes()
+      })
+    
+    presenter.getList(force: true, timeMeasurementUtils: timeMeasurementUtils, onLoading: {_ in }, onSuccess: {_ in}, onError: {_ in}, onEmpty: {})
+  }
+  
+  private func getTimes() {
+    log.d {
+        "-------Times-------\n" +
+        "Parsing Time \(self.parsingTime)\n" +
+        "Response to Entity Mapping Time \(self.responseToEntityMappingTime)\n" +
+        "Entity Writing Time \(self.entityWritingTime)\n" +
+        "Entity Reading Time \(self.entityReadingTime)\n" +
+        "Entity to Domain Model Mapping Time \(self.entityToDomainModelMappingTime)"
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        breedTableView.dataSource = self
-        // Add Refresh Control to Table View
-        breedTableView.refreshControl = refreshControl
-        // Configure Refresh Control
-        refreshControl.addTarget(self, action: #selector(self.getBreedsForced), for: .valueChanged)
-        refreshControl.beginRefreshing()
-        adapter.refreshBreeds(forced: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        adapter.onDestroy()
-    }
-    
-    // MARK: BreedModel Closures
-    
-    private func viewUpdateSuccess(for summary: ItemDataSummary) {
-        log.d(withMessage: {"View updating with \(summary.allItems.count) breeds"})
-        data = summary.allItems
-        breedTableView.reloadData()
-    }
-    
-    private func errorUpdate(for errorMessage: String) {
-        log.e(withMessage: {"Displaying error: \(errorMessage)"})
-        let alertController = UIAlertController(title: "error", message: errorMessage, preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-        present(alertController, animated: true, completion: nil)
-    }
-    
+  }
+  
+  
 }
 
-// MARK: - UITableViewDataSource
-extension BreedsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BreedCell", for: indexPath)
-        if let breedCell = cell as? BreedCell {
-            let breed = data[indexPath.row]
-            breedCell.bind(breed)
-            breedCell.delegate = self
-        }
-        return cell
-    }
-}
+//Parsing Time 696
+//Response to Entity Mapping Time 10
+//Entity Writing Time 0
+//Entity Reading Time 12
+//Entity to Domain Model Mapping Time 0
 
-// MARK: - BreedCellDelegate
-extension BreedsViewController: BreedCellDelegate {
-    func toggleFavorite(_ breed: Breed) {
-        adapter.updateBreedFavorite(breed: breed)
-    }
-}
+//Parsing Time 599
+//Response to Entity Mapping Time 4
+//Entity Writing Time 0
+//Entity Reading Time 11
+//Entity to Domain Model Mapping Time 0
+
+//Parsing Time 534
+//Response to Entity Mapping Time 3
+//Entity Writing Time 0
+//Entity Reading Time 9
+//Entity to Domain Model Mapping Time 0
+
+//Parsing Time 522
+//Response to Entity Mapping Time 3
+//Entity Writing Time 0
+//Entity Reading Time 9
+//Entity to Domain Model Mapping Time 0
+
+//Parsing Time 587
+//Response to Entity Mapping Time 3
+//Entity Writing Time 0
+//Entity Reading Time 12
+//Entity to Domain Model Mapping Time 0
+
+
+
 
 

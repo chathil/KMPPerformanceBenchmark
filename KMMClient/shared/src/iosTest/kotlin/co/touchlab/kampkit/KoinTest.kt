@@ -8,20 +8,20 @@ import platform.Foundation.NSUserDefaults
 import kotlin.test.AfterTest
 import kotlin.test.Test
 
-class KoinTest : BaseTest() {
-    @Test
-    fun checkAllModules() {
-        initKoinIos(
-            userDefaults = NSUserDefaults.standardUserDefaults,
-            appInfo = TestAppInfo,
-            doOnStartup = { }
-        ).checkModules {
-            create<Kermit> { parametersOf("TestTag") }
-        }
-    }
-
-    @AfterTest
-    fun breakdown() {
-        stopKoin()
-    }
-}
+//class KoinTest : BaseTest() {
+//    @Test
+//    fun checkAllModules() {
+//        initKoinIos(
+//            userDefaults = NSUserDefaults.standardUserDefaults,
+//            appInfo = TestAppInfo,
+//            doOnStartup = { }
+//        ).checkModules {
+//            create<Kermit> { parametersOf("TestTag") }
+//        }
+//    }
+//
+//    @AfterTest
+//    fun breakdown() {
+//        stopKoin()
+//    }
+//}
