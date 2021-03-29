@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.koin:koin-test-metadata:3.0.0-alpha-4" type="kotlin.common">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-test-metadata/3.0.0-alpha-4/87f0d1d9886b8813e320ab1aedd2314c79a7d71b/koin-test-metadata-3.0.0-alpha-4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-test-metadata/3.0.0-alpha-4/9a3b1718e9966369d1dd2cbd4cf8f9814ab9eec8/koin-test-metadata-3.0.0-alpha-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

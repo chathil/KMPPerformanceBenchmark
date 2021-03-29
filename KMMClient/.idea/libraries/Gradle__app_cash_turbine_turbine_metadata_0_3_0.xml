@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: app.cash.turbine:turbine-metadata:0.3.0" type="kotlin.common">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.turbine/turbine-metadata/0.3.0/8718eeeb34b15c691bde1beba7a5d02e2eae85ff/turbine-metadata-0.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.turbine/turbine-metadata/0.3.0/ffc85346bba9a5777da1d6fb6e02df0040f526f1/turbine-metadata-0.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

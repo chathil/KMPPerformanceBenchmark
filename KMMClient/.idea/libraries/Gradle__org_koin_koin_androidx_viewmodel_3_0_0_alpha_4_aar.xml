@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: org.koin:koin-androidx-viewmodel:3.0.0-alpha-4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/11029fd0553c60bf03184842cd57a255/koin-androidx-viewmodel-3.0.0-alpha-4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/11029fd0553c60bf03184842cd57a255/koin-androidx-viewmodel-3.0.0-alpha-4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/11029fd0553c60bf03184842cd57a255/koin-androidx-viewmodel-3.0.0-alpha-4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-androidx-viewmodel/3.0.0-alpha-4/af7f15d1194cf38fb03be8fe0f917fede18e026b/koin-androidx-viewmodel-3.0.0-alpha-4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-androidx-viewmodel/3.0.0-alpha-4/e7dee1c796d58785e88f69e4d11e59a76295883b/koin-androidx-viewmodel-3.0.0-alpha-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: co.touchlab:sqliter-iosx64:klib:0.7.0" type="kotlin.native">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/sqliter-iosx64/0.7.0/a826095da751c7c1e8257a94e04187fb18b8d666/sqliter.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/sqliter-iosx64/0.7.0/7e139c35761f63a99a16c189545464628d844609/sqliter-iosx64-0.7.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

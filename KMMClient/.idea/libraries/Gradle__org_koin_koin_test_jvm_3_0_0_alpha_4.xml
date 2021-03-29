@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.koin:koin-test-jvm:3.0.0-alpha-4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-test-jvm/3.0.0-alpha-4/de90ca0f29cfbe677728abd8e568273615864c0a/koin-test-jvm-3.0.0-alpha-4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-test-jvm/3.0.0-alpha-4/d0117b4a73c94829c9848be8eec0b649090237a0/koin-test-jvm-3.0.0-alpha-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

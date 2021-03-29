@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: co.touchlab:karmok-library-jvm:0.1.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/karmok-library-jvm/0.1.8/997a5a2b4a85282b03a2f2ac1ff0e5432ff54ae4/karmok-library-jvm-0.1.8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/karmok-library-jvm/0.1.8/719300fc420fdd2f22dd73f78511cb17f4635d21/karmok-library-jvm-0.1.8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/karmok-library-jvm/0.1.8/bbb510d55ec5fcea607dc75b39cb97cc38f3a03c/karmok-library-jvm-0.1.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

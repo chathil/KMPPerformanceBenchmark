@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.russhwolf:multiplatform-settings-test-iosx64:klib:0.7" type="kotlin.native">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.russhwolf/multiplatform-settings-test-iosx64/0.7/97e964a0a1b1db7ed884ea708bce25389567a60f/multiplatform-settings-test.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.russhwolf/multiplatform-settings-test-iosx64/0.7/7f6236627c87ee1565750cef4001841335c814a6/multiplatform-settings-test-iosx64-0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

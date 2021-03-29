@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: co.touchlab:kermit-metadata:0.1.8" type="kotlin.common">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/kermit-metadata/0.1.8/b8e757c049a4e1a50ba891975a7841fd95f836c8/kermit-metadata-0.1.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/kermit-metadata/0.1.8/52e981b3ed6d4d0b6fca1713b810d98a06cfe69d/kermit-metadata-0.1.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

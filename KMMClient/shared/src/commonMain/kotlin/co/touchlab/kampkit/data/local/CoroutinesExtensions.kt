@@ -19,17 +19,3 @@ suspend fun Transacter.transactionWithContext(
         }
     }
 }
-// Use kotlinx.serialization to parse it back to POJ
-val listOfRatingsAdapter = object : ColumnAdapter<List<RatingEntity>, String> {
-    override fun decode(databaseValue: String): List<RatingEntity> =
-        listOf()
-    override fun encode(value: List<RatingEntity>): String = value.joinToString(separator = ",")
-}
-
-//val queryWrapper: Database = Database(
-//    driver = driver,
-//    hockeyPlayerAdapter = hockeyPlayer.Adapter(
-//        cup_winsAdapter = listOfStringsAdapter
-//    )
-//)
-

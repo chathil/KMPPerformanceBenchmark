@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-client-logging-iosx64:klib:1.5.0" type="kotlin.native">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-logging-iosx64/1.5.0/b916e785a1e4b57485b7d939f34c883b970c0e5f/ktor-client-logging.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-logging-iosx64/1.5.0/c49adfc9c6191c749e9563d78af42373bb741b0/ktor-client-logging-iosx64-1.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.koin:koin-test-iosx64:klib:3.0.0-alpha-4" type="kotlin.native">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-test-iosx64/3.0.0-alpha-4/89f022c972dc926497b29f0c68412f9cb1926847/koin-test.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-test-iosx64/3.0.0-alpha-4/3bf1ad8d994a3095aa3d4798bc9fa50d1bf477c/koin-test-iosx64-3.0.0-alpha-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.squareup.sqldelight:coroutines-extensions-metadata:1.4.4" type="kotlin.common">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/coroutines-extensions-metadata/1.4.4/691accba22939617f703815a8a57f02e7768569f/sqldelight-coroutines-extensions-metadata-1.4.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/coroutines-extensions-metadata/1.4.4/c29a95a5cfc78c63ba4cc63a43e6c44005699887/coroutines-extensions-metadata-1.4.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

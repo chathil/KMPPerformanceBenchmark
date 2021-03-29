@@ -5,7 +5,7 @@ import co.touchlab.kampkit.data.local.GetGamesLocalDataSource
 import co.touchlab.kampkit.data.remote.GetGamesRemoteDataSource
 import co.touchlab.kampkit.domain.usecase.GamesInteractor
 import co.touchlab.kampkit.domain.usecase.GamesUseCase
-import co.touchlab.kampkit.presentation.GamesPresenter
+import co.touchlab.kampkit.presentation.GetGamesPresenter
 import co.touchlab.kermit.Kermit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.datetime.Clock
@@ -50,7 +50,7 @@ private val coreModule = module {
     }
     single { GetGamesRepository(get(), get()) }
     single { GamesInteractor(get()) }
-    single { GamesPresenter(get()) }
+    single { GetGamesPresenter(get()) }
     single<GamesUseCase> {GamesInteractor(get())}
     single<Clock> {
         Clock.System

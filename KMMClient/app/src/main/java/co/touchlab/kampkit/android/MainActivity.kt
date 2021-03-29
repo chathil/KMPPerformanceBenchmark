@@ -2,24 +2,19 @@ package co.touchlab.kampkit.android
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import co.touchlab.kampkit.android.databinding.ActivityMainBinding
-import co.touchlab.kampkit.presentation.GamesPresenter
+import co.touchlab.kampkit.presentation.GetGamesPresenter
 import co.touchlab.kampkit.utils.TimeMeasurementUtils
 import co.touchlab.kermit.Kermit
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import org.koin.core.parameter.parametersOf
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.get
 
 class MainActivity : AppCompatActivity(), KoinComponent {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val log: Kermit by inject { parametersOf("MainActivity") }
-    private val presenter: GamesPresenter by inject()
+    private val presenter: GetGamesPresenter by inject()
 
     private var parsingTimeStart = 0L
     private var parsingTime = 0
