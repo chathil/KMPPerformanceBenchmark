@@ -37,7 +37,6 @@ class BreedsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
     let timeMeasurementUtils = TimeMeasurementUtils(
       parsingTimeStart: { self.parsingTimeStart = $0.int64Value },
       parsingTimeEnd: { self.parsingTime = Int($0.int64Value - self.parsingTimeStart) },
